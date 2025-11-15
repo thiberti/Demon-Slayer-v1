@@ -1,0 +1,458 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a2e;
+}
+
+.navbartheme {
+    background: linear-gradient(135deg, #2c1810 0%, #1a1a2e 100%);
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(255, 69, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #ff4500;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff4500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    letter-spacing: 2px;
+}
+
+.nav-brand span {
+    color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 5px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, #ff4500 0%, #ff6b35 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 69, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.nav-button:hover::before {
+    left: 100%;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.5);
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+}
+
+.nav-button.active,
+.nav-item:hover .nav-button {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+}
+
+.dropdown-arrow {
+    margin-left: 8px;
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+.nav-item:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: rgba(26, 26, 46, 0.98);
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff4500;
+    border-radius: 12px;
+    min-width: 220px;
+    padding: 10px 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #ff4500;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 69, 0, 0.2);
+    padding-left: 30px;
+    color: #ff6b35;
+}
+
+.dropdown-menu a:hover::before {
+    transform: scaleY(1);
+}
+
+.muzan-button {
+    background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
+    animation: pulse 2s infinite;
+}
+
+.muzan-button:hover {
+    background: linear-gradient(135deg, #a00000 0%, #ff1744 100%);
+    box-shadow: 0 6px 25px rgba(220, 20, 60, 0.6);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 4px 20px rgba(220, 20, 60, 0.6);
+    }
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: #ff4500;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 300px;
+        height: calc(100vh - 70px);
+        background: rgba(26, 26, 46, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        transition: right 0.3s ease;
+        border-left: 3px solid #ff4500;
+        overflow-y: auto;
+        align-items: stretch;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-button {
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        transform: none;
+        margin-top: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav-item.active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        max-height: 500px;
+    }
+
+    .dropdown-arrow {
+        float: right;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand {
+        font-size: 1.3rem;
+    }
+
+    .nav-menu {
+        width: 250px;
+    }
+}
+
+#corpoSite {
+    width: 90%;
+    /* ou 80%, 85%, etc */
+    height: 4000px;
+    max-width: 1200px;
+    /* Limita o tamanho máximo em telas grandes */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+    padding: 20px 0;
+    /* Espaçamento vertical */
+    background-color: #ffc7b3;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    font-size: 3rem;
+    color: #ff4500;
+    text-align: center;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        4px 4px 8px rgba(255, 69, 0, 0.5);
+    letter-spacing: 3px;
+    margin: 30px 0;
+}
+
+.hashiras-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #ff6b35;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.hashira-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.hashira-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--card-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--card-color);
+}
+
+.hashira-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, var(--card-color));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.hashira-card:hover::before {
+    opacity: 0.2;
+}
+
+.hashira-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.hashira-card:hover .hashira-image {
+    transform: scale(1.1);
+}
+
+.hashira-info {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hashira-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.hashira-breathing {
+    color: var(--card-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hashira-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Cores temáticas para cada Hashira */
+.water {
+    --card-color: #4a90e2;
+}
+
+.insect {
+    --card-color: #b565d8;
+}
+
+.flame {
+    --card-color: #ff6b35;
+}
+
+.sound {
+    --card-color: #f4a261;
+}
+
+.love {
+    --card-color: #ff69b4;
+}
+
+.stone {
+    --card-color: #8b7355;
+}
+
+.serpent {
+    --card-color: #9b59b6;
+}
+
+.wind {
+    --card-color: #2ecc71;
+}
+
+.mist {
+    --card-color: #95a5a6;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hashira-image {
+        height: 250px;
+    }
+}
+
+/* Fix para o grid do Bootstrap funcionar */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -12px;
+}
+
+.col-12,
+.col-md-6,
+.col-lg-4 {
+    padding-right: 12px;
+    padding-left: 12px;
+}
