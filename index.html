@@ -2,287 +2,255 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Demon Slayer</title>
-  <!--Favicon-->
-  <link rel="shortcut icon" href="https://mypst.com.br/media/game/NPWR23868_00/full-trophy_10.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demon Slayer</title>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="https://mypst.com.br/media/game/NPWR23868_00/full-trophy_10.png"
+        type="image/x-icon">
 
-  <!-- Cards do BootStrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Cards do BootStrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 
     <!-- Meu Próprio CSS-->
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <nav class="navbartheme">
-    <div class="nav-container">
-      <div class="nav-brand">
-        ⚔️ DEMON <span>SLAYER</span>
-      </div>
+    <nav class="navbartheme">
+        <div class="nav-container">
+            <div class="nav-brand">
+                ⚔️ DEMON <span>SLAYER</span>
+            </div>
 
-      <button class="menu-toggle" onclick="toggleMenu()">
-        ☰
-      </button>
+            <button class="menu-toggle">
+                ☰
+            </button>
 
-      <ul class="nav-menu" id="navMenu">
-        <li class="nav-item">
-          <button class="nav-button" onclick="toggleDropdown(this)">
-            Principais <span class="dropdown-arrow">▼</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Tanjiro Kamado</a></li>
-            <li><a href="#">Zenitsu Agatsuma</a></li>
-            <li><a href="#">Inosuke Hashibira</a></li>
-            <li><a href="#">Nezuko Kamado</a></li>
-          </ul>
-        </li>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <button class="nav-button">
+                        Principais <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Tanjiro Kamado</a></li>
+                        <li><a href="#">Zenitsu Agatsuma</a></li>
+                        <li><a href="#">Inosuke Hashibira</a></li>
+                        <li><a href="#">Nezuko Kamado</a></li>
+                    </ul>
+                </li>
 
-        <li class="nav-item">
-          <button class="nav-button" onclick="toggleDropdown(this)">
-            Hashiras <span class="dropdown-arrow">▼</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Giyu Tomioka (Água)</a></li>
-            <li><a href="#">Shinobu Kocho (Inseto)</a></li>
-            <li><a href="#">Kyojuro Rengoku (Chamas)</a></li>
-            <li><a href="#">Tengen Uzui (Som)</a></li>
-            <li><a href="#">Mitsuri Kanroji (Amor)</a></li>
-            <li><a href="#">Gyomei Himejima (Pedra)</a></li>
-            <li><a href="#">Obanai Iguro (Serpente)</a></li>
-            <li><a href="#">Sanemi Shinazugawa (Vento)</a></li>
-            <li><a href="#">Muichiro Tokito (Névoa)</a></li>
-          </ul>
-        </li>
+                <li class="nav-item">
+                    <button class="nav-button">
+                        Hashiras <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Giyu Tomioka (Água)</a></li>
+                        <li><a href="#">Shinobu Kocho (Inseto)</a></li>
+                        <li><a href="#">Kyojuro Rengoku (Chamas)</a></li>
+                        <li><a href="#">Tengen Uzui (Som)</a></li>
+                        <li><a href="#">Mitsuri Kanroji (Amor)</a></li>
+                        <li><a href="#">Gyomei Himejima (Pedra)</a></li>
+                        <li><a href="#">Obanai Iguro (Serpente)</a></li>
+                        <li><a href="#">Sanemi Shinazugawa (Vento)</a></li>
+                        <li><a href="#">Muichiro Tokito (Névoa)</a></li>
+                    </ul>
+                </li>
 
-        <li class="nav-item">
-          <button class="nav-button" onclick="toggleDropdown(this)">
-            Luas Superiores <span class="dropdown-arrow">▼</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Kokushibo</a></li>
-            <li><a href="#">Doma</a></li>
-            <li><a href="#">Akaza</a></li>
-            <li><a href="#">Hantengu</a></li>
-            <li><a href="#">Gyokko</a></li>
-            <li><a href="#">Gyutaro e Daki</a></li>
-          </ul>
-        </li>
+                <li class="nav-item">
+                    <button class="nav-button">
+                        Luas Superiores <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Kokushibo</a></li>
+                        <li><a href="#">Doma</a></li>
+                        <li><a href="#">Akaza</a></li>
+                        <li><a href="#">Hantengu</a></li>
+                        <li><a href="#">Gyokko</a></li>
+                        <li><a href="#">Gyutaro e Daki</a></li>
+                    </ul>
+                </li>
 
-        <li class="nav-item">
-          <button class="nav-button" onclick="toggleDropdown(this)">
-            Luas Inferiores <span class="dropdown-arrow">▼</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Enmu</a></li>
-            <li><a href="#">Rokuro</a></li>
-            <li><a href="#">Wakuraba</a></li>
-            <li><a href="#">Mukago</a></li>
-            <li><a href="#">Rui</a></li>
-            <li><a href="#">Kamanue</a></li>
-          </ul>
-        </li>
+                <li class="nav-item">
+                    <button class="nav-button">
+                        Luas Inferiores <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Enmu</a></li>
+                        <li><a href="#">Rokuro</a></li>
+                        <li><a href="#">Wakuraba</a></li>
+                        <li><a href="#">Mukago</a></li>
+                        <li><a href="#">Rui</a></li>
+                        <li><a href="#">Kamanue</a></li>
+                    </ul>
+                </li>
 
-        <li class="nav-item">
-          <button class="nav-button muzan-button">
-            Muzan Kibutsuji
-          </button>
-        </li>
-      </ul>
+                <li class="nav-item">
+                    <button class="nav-button muzan-button">
+                        Muzan Kibutsuji
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="img-container">
+        <img src="https://i.redd.it/m4ff6301qxf41.png" alt="Banner Demon Slayer">
     </div>
-  </nav>
 
-  <div class="img-container">
-    <img src="https://i.redd.it/m4ff6301qxf41.png" alt="Banner Demon Slayer">
-  </div>
+    <div id="corpoSite">
+        <div class="hashiras-section">
+            <h1>Demon Slayer Brasil</h1>
+            <p class="section-subtitle">Os 9 Pilares Mais Poderosos da Corporação dos Caçadores de Demônios</p>
 
-  <div id="corpoSite">
-    <div class="hashiras-section">
-      <h1>Demon Slayer Brasil</h1>
-      <p class="section-subtitle">Os 9 Pilares Mais Poderosos da Corporação dos Caçadores de Demônios</p>
+            <div class="row g-4">
+                <!-- Giyu Tomioka -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card water">
+                        <img src="https://i.pinimg.com/1200x/c2/68/c0/c268c002c280e8f625147f4eff040709.jpg"
+                            class="hashira-image" alt="Giyu Tomioka">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Giyu Tomioka</h3>
+                            <p class="hashira-breathing">🌊 Respiração da Água</p>
+                            <p class="hashira-description">O Hashira da Água é conhecido por sua personalidade séria e
+                                reservada.
+                                Mestre em técnicas aquáticas devastadoras.</p>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="row g-4">
-        <!-- Giyu Tomioka -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card water">
-            <img src="https://i.pinimg.com/1200x/c2/68/c0/c268c002c280e8f625147f4eff040709.jpg" class="hashira-image"
-              alt="Giyu Tomioka">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Giyu Tomioka</h3>
-              <p class="hashira-breathing">🌊 Respiração da Água</p>
-              <p class="hashira-description">O Hashira da Água é conhecido por sua personalidade séria e reservada.
-                Mestre em técnicas aquáticas devastadoras.</p>
+                <!-- Shinobu Kocho -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card insect">
+                        <img src="https://i.pinimg.com/736x/69/c4/34/69c434d42be9256d992700ba662ed667.jpg"
+                            class="hashira-image" alt="Shinobu Kocho">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Shinobu Kocho</h3>
+                            <p class="hashira-breathing">🦋 Respiração do Inseto</p>
+                            <p class="hashira-description">A Hashira dos Insetos usa venenos letais em suas técnicas.
+                                Sempre
+                                sorridente, mas mortal em combate.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kyojuro Rengoku -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card flame">
+                        <img src="https://i.pinimg.com/736x/8b/f3/93/8bf393b45f426ba75a3cc02ed21ac732.jpg"
+                            class="hashira-image" alt="Kyojuro Rengoku">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Kyojuro Rengoku</h3>
+                            <p class="hashira-breathing">🔥 Respiração das Chamas</p>
+                            <p class="hashira-description">O lendário Hashira das Chamas. Carismático e apaixonado,
+                                protege os fracos
+                                com seu coração flamejante.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tengen Uzui -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card sound">
+                        <img src="https://i.pinimg.com/736x/eb/80/04/eb80047c8ae02a92ff8808f8c00d2084.jpg"
+                            class="hashira-image" alt="Tengen Uzui">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Tengen Uzui</h3>
+                            <p class="hashira-breathing">🎵 Respiração do Som</p>
+                            <p class="hashira-description">O extravagante Hashira do Som. Ex-ninja que usa explosivos e
+                                técnicas
+                                sonoras devastadoras.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mitsuri Kanroji -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card love">
+                        <img src="https://i.pinimg.com/1200x/b6/f6/d0/b6f6d05888d9ea7e48c69acc60093cec.jpg"
+                            class="hashira-image" alt="Mitsuri Kanroji">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Mitsuri Kanroji</h3>
+                            <p class="hashira-breathing">💕 Respiração do Amor</p>
+                            <p class="hashira-description">A Hashira do Amor possui força sobre-humana e flexibilidade
+                                única. Doce,
+                                mas letal em batalha.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gyomei Himejima -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card stone">
+                        <img src="https://i.pinimg.com/736x/f9/21/68/f921681162365788e9e3e211b527a38f.jpg"
+                            class="hashira-image" alt="Gyomei Himejima">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Gyomei Himejima</h3>
+                            <p class="hashira-breathing">🪨 Respiração da Pedra</p>
+                            <p class="hashira-description">O Hashira mais forte. Cego, mas possui força descomunal e um
+                                coração
+                                compassivo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Obanai Iguro -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card serpent">
+                        <img src="https://i.pinimg.com/736x/1c/c0/66/1cc06626adf6f2e255a7274b4b8916cb.jpg"
+                            class="hashira-image" alt="Obanai Iguro">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Obanai Iguro</h3>
+                            <p class="hashira-breathing">🐍 Respiração da Serpente</p>
+                            <p class="hashira-description">O Hashira da Serpente usa movimentos sinuosos e
+                                imprevisíveis. Sempre
+                                acompanhado de Kaburamaru.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sanemi Shinazugawa -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card wind">
+                        <img src="https://i.pinimg.com/1200x/a9/a6/a6/a9a6a6c0c8de9d1ecdda9bc2114f3124.jpg"
+                            class="hashira-image" alt="Sanemi Shinazugawa">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Sanemi Shinazugawa</h3>
+                            <p class="hashira-breathing">🌪️ Respiração do Vento</p>
+                            <p class="hashira-description">O brutal Hashira do Vento. Agressivo e coberto de cicatrizes,
+                                mas
+                                profundamente leal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Muichiro Tokito -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="hashira-card mist">
+                        <img src="https://i.pinimg.com/736x/40/10/7f/40107fc16d99cae92d19e344ce8e98e4.jpg"
+                            class="hashira-image" alt="Muichiro Tokito">
+                        <div class="hashira-info">
+                            <h3 class="hashira-name">Muichiro Tokito</h3>
+                            <p class="hashira-breathing">🌫️ Respiração da Névoa</p>
+                            <p class="hashira-description">O prodígio mais jovem. Distraído e sonhador, mas
+                                incrivelmente talentoso em
+                                combate.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-
-        <!-- Shinobu Kocho -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card insect">
-            <img src="https://i.pinimg.com/736x/69/c4/34/69c434d42be9256d992700ba662ed667.jpg" class="hashira-image"
-              alt="Shinobu Kocho">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Shinobu Kocho</h3>
-              <p class="hashira-breathing">🦋 Respiração do Inseto</p>
-              <p class="hashira-description">A Hashira dos Insetos usa venenos letais em suas técnicas. Sempre
-                sorridente, mas mortal em combate.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kyojuro Rengoku -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card flame">
-            <img src="https://i.pinimg.com/736x/8b/f3/93/8bf393b45f426ba75a3cc02ed21ac732.jpg" class="hashira-image"
-              alt="Kyojuro Rengoku">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Kyojuro Rengoku</h3>
-              <p class="hashira-breathing">🔥 Respiração das Chamas</p>
-              <p class="hashira-description">O lendário Hashira das Chamas. Carismático e apaixonado, protege os fracos
-                com seu coração flamejante.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tengen Uzui -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card sound">
-            <img src="https://i.pinimg.com/736x/eb/80/04/eb80047c8ae02a92ff8808f8c00d2084.jpg" class="hashira-image"
-              alt="Tengen Uzui">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Tengen Uzui</h3>
-              <p class="hashira-breathing">🎵 Respiração do Som</p>
-              <p class="hashira-description">O extravagante Hashira do Som. Ex-ninja que usa explosivos e técnicas
-                sonoras devastadoras.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mitsuri Kanroji -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card love">
-            <img src="https://i.pinimg.com/1200x/b6/f6/d0/b6f6d05888d9ea7e48c69acc60093cec.jpg" class="hashira-image"
-              alt="Mitsuri Kanroji">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Mitsuri Kanroji</h3>
-              <p class="hashira-breathing">💕 Respiração do Amor</p>
-              <p class="hashira-description">A Hashira do Amor possui força sobre-humana e flexibilidade única. Doce,
-                mas letal em batalha.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Gyomei Himejima -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card stone">
-            <img src="https://i.pinimg.com/736x/f9/21/68/f921681162365788e9e3e211b527a38f.jpg" class="hashira-image"
-              alt="Gyomei Himejima">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Gyomei Himejima</h3>
-              <p class="hashira-breathing">🪨 Respiração da Pedra</p>
-              <p class="hashira-description">O Hashira mais forte. Cego, mas possui força descomunal e um coração
-                compassivo.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Obanai Iguro -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card serpent">
-            <img src="https://i.pinimg.com/736x/1c/c0/66/1cc06626adf6f2e255a7274b4b8916cb.jpg" class="hashira-image"
-              alt="Obanai Iguro">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Obanai Iguro</h3>
-              <p class="hashira-breathing">🐍 Respiração da Serpente</p>
-              <p class="hashira-description">O Hashira da Serpente usa movimentos sinuosos e imprevisíveis. Sempre
-                acompanhado de Kaburamaru.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sanemi Shinazugawa -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card wind">
-            <img src="https://i.pinimg.com/1200x/a9/a6/a6/a9a6a6c0c8de9d1ecdda9bc2114f3124.jpg" class="hashira-image"
-              alt="Sanemi Shinazugawa">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Sanemi Shinazugawa</h3>
-              <p class="hashira-breathing">🌪️ Respiração do Vento</p>
-              <p class="hashira-description">O brutal Hashira do Vento. Agressivo e coberto de cicatrizes, mas
-                profundamente leal.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Muichiro Tokito -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="hashira-card mist">
-            <img src="https://i.pinimg.com/736x/40/10/7f/40107fc16d99cae92d19e344ce8e98e4.jpg" class="hashira-image"
-              alt="Muichiro Tokito">
-            <div class="hashira-info">
-              <h3 class="hashira-name">Muichiro Tokito</h3>
-              <p class="hashira-breathing">🌫️ Respiração da Névoa</p>
-              <p class="hashira-description">O prodígio mais jovem. Distraído e sonhador, mas incrivelmente talentoso em
-                combate.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <!-- Script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
-  <script src="script.js"></script>
-
-  <script>
-    function toggleMenu() {
-      const navMenu = document.getElementById('navMenu');
-      navMenu.classList.toggle('active');
-    }
-
-    function toggleDropdown(button) {
-      // Em mobile, toggle o dropdown
-      if (window.innerWidth <= 1024) {
-        const navItem = button.parentElement;
-        const wasActive = navItem.classList.contains('active');
-
-        // Fecha todos os outros dropdowns
-        document.querySelectorAll('.nav-item').forEach(item => {
-          item.classList.remove('active');
-        });
-
-        // Toggle o atual
-        if (!wasActive) {
-          navItem.classList.add('active');
-        }
-      }
-    }
-
-    // Fecha o menu ao clicar em um link
-    document.querySelectorAll('.dropdown-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 1024) {
-          document.getElementById('navMenu').classList.remove('active');
-        }
-      });
-    });
-
-    // Fecha o menu ao clicar fora
-    document.addEventListener('click', (e) => {
-      const navMenu = document.getElementById('navMenu');
-      const menuToggle = document.querySelector('.menu-toggle');
-
-      if (navMenu && menuToggle && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-      }
-    });
-  </script>
+    <script src="script.js" defer></script>
 
 </body>
 
