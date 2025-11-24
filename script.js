@@ -107,3 +107,60 @@ function animate() {
 }
 
 animate();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Lógica para o Menu de Navegação em Telas Pequenas (Hamburguer) ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('#navMenu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Impede que o evento de clique se propague para o window
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    // --- Lógica para os Menus Suspensos (Dropdowns) ---
+    const navItems = document.querySelectorAll('.nav-item');
+
+    navItems.forEach(item => {
+        const button = item.querySelector('.nav-button');
+        const dropdownMenu = item.querySelector('.dropdown-menu');
+
+        // Garante que estamos lidando apenas com itens que têm um dropdown
+        if (button && dropdownMenu) {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Impede o fechamento imediato pelo listener do window
+
+                // O dropdown que foi clicado está visível?
+                const isVisible = dropdownMenu.style.display === 'block';
+
+                // Primeiro, fecha todos os outros dropdowns
+                closeAllDropdowns();
+                
+                // Se o dropdown clicado não estava visível, ele é exibido
+                if (!isVisible) {
+                    dropdownMenu.style.display = 'block';
+                }
+            });
+        }
+    });
+
+    // --- Função para fechar todos os dropdowns abertos ---
+    const closeAllDropdowns = () => {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+    };
+
+    // --- Fechar elementos ao clicar em qualquer lugar da página ---
+    window.addEventListener('click', () => {
+        closeAllDropdowns();
+        
+        // Esconde o menu de navegação móvel se estiver ativo
+        if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+        }
+    });
+});
