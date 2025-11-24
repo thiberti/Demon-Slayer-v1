@@ -1,58 +1,62 @@
-@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --primary-text-color: #e0e0e0;
+    --secondary-text-color: #b3b3b3;
+    --brand-color: #e50914; /* Cor inspirada no Muzan */
+    --gold-color: #ffb700;
+    --font-main: 'Helvetica', 'Arial', sans-serif;
+    --font-special: 'Noto Serif JP', serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1a1a2e;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
+/* --- Barra de Navegação --- */
 .navbartheme {
-    background: linear-gradient(135deg, #2c1810 0%, #1a1a2e 100%);
-    padding: 0;
-    box-shadow: 0 4px 20px rgba(255, 69, 0, 0.3);
+    background-color: var(--surface-color);
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid #ff4500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #333;
 }
 
 .nav-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .nav-brand {
+    font-family: var(--font-special);
     font-size: 1.8rem;
-    font-weight: bold;
-    color: #ff4500;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    padding: 15px 0;
-    letter-spacing: 2px;
+    font-weight: 900;
+    color: var(--primary-text-color);
 }
 
 .nav-brand span {
-    color: #fff;
+    color: var(--gold-color);
+    text-shadow: 0 0 5px var(--gold-color);
 }
 
 .nav-menu {
-    display: flex;
-    gap: 5px;
     list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
     align-items: center;
 }
 
@@ -61,398 +65,242 @@ body {
 }
 
 .nav-button {
-    background: linear-gradient(135deg, #ff4500 0%, #ff6b35 100%);
-    color: white;
+    background: none;
     border: none;
-    padding: 12px 20px;
+    color: var(--primary-text-color);
+    font-family: var(--font-main);
     font-size: 1rem;
-    font-weight: 600;
     cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(255, 69, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.nav-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
-}
-
-.nav-button:hover::before {
-    left: 100%;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding: 0.5rem 0;
 }
 
 .nav-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.5);
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-}
-
-.nav-button.active,
-.nav-item:hover .nav-button {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    color: var(--gold-color);
+    text-shadow: 0 0 3px var(--gold-color);
 }
 
 .dropdown-arrow {
-    margin-left: 8px;
-    font-size: 0.8rem;
-    transition: transform 0.3s;
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+    display: none; /* Controlado por JS */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--surface-color);
+    border: 1px solid #333;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    min-width: 200px;
+    z-index: 1001;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-menu li a {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    display: block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 183, 0, 0.1);
+    color: var(--gold-color);
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block; /* Simples hover para mostrar, JS pode melhorar */
 }
 
 .nav-item:hover .dropdown-arrow {
     transform: rotate(180deg);
 }
 
-.dropdown-menu {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    background: rgba(26, 26, 46, 0.98);
-    backdrop-filter: blur(10px);
-    border: 2px solid #ff4500;
-    border-radius: 12px;
-    min-width: 220px;
-    padding: 10px 0;
-    list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    z-index: 100;
-}
-
-.nav-item:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-menu li {
-    padding: 0;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 12px 20px;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.dropdown-menu a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: #ff4500;
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-
-.dropdown-menu a:hover {
-    background: rgba(255, 69, 0, 0.2);
-    padding-left: 30px;
-    color: #ff6b35;
-}
-
-.dropdown-menu a:hover::before {
-    transform: scaleY(1);
-}
 
 .muzan-button {
-    background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
-    animation: pulse 2s infinite;
+    background-color: var(--brand-color);
+    border-radius: 5px;
+    padding: 0.6rem 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .muzan-button:hover {
-    background: linear-gradient(135deg, #a00000 0%, #ff1744 100%);
-    box-shadow: 0 6px 25px rgba(220, 20, 60, 0.6);
+    background-color: #ff4d4d;
+    transform: scale(1.05);
+    color: #fff;
 }
 
-@keyframes pulse {
-
-    0%,
-    100% {
-        box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
-    }
-
-    50% {
-        box-shadow: 0 4px 20px rgba(220, 20, 60, 0.6);
-    }
-}
-
-/* Mobile Menu */
 .menu-toggle {
-    display: none;
-    background: #ff4500;
+    display: none; /* Oculto em telas grandes */
+    background: none;
     border: none;
-    color: white;
-    font-size: 1.5rem;
-    padding: 10px 15px;
+    color: var(--primary-text-color);
+    font-size: 2rem;
     cursor: pointer;
-    border-radius: 8px;
 }
 
-@media (max-width: 1024px) {
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        width: 300px;
-        height: calc(100vh - 70px);
-        background: rgba(26, 26, 46, 0.98);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-        transition: right 0.3s ease;
-        border-left: 3px solid #ff4500;
-        overflow-y: auto;
-        align-items: stretch;
-    }
-
-    .nav-menu.active {
-        right: 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-button {
-        width: 100%;
-        text-align: left;
-    }
-
-    .dropdown-menu {
-        position: static;
-        opacity: 0;
-        visibility: hidden;
-        max-height: 0;
-        transform: none;
-        margin-top: 10px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-
-    .nav-item.active .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        max-height: 500px;
-    }
-
-    .dropdown-arrow {
-        float: right;
-    }
+/* --- Banner --- */
+.img-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
 }
 
-@media (max-width: 480px) {
-    .nav-brand {
-        font-size: 1.3rem;
-    }
-
-    .nav-menu {
-        width: 250px;
-    }
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
 }
 
+/* --- Conteúdo Principal --- */
 #corpoSite {
-    width: 90%;
-    /* ou 80%, 85%, etc */
-    height: 4000px;
-    max-width: 1200px;
-    /* Limita o tamanho máximo em telas grandes */
-    margin: 0 auto;
-    /* Centraliza horizontalmente */
-    padding: 20px 0;
-    /* Espaçamento vertical */
-    background-color: #ffc7b3;
-}
-
-h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Noto Serif JP', serif;
-    font-weight: 900;
-    font-size: 3rem;
-    color: #ff4500;
-    text-align: center;
-    text-shadow:
-        2px 2px 0 #000,
-        -2px -2px 0 #000,
-        2px -2px 0 #000,
-        -2px 2px 0 #000,
-        4px 4px 8px rgba(255, 69, 0, 0.5);
-    letter-spacing: 3px;
-    margin: 30px 0;
-}
-
-.hashiras-section {
+    padding: 3rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-.section-title {
-    text-align: center;
+.hashiras-section h1 {
+    font-family: var(--font-special);
     font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 900;
+    text-align: center;
+    color: var(--gold-color);
+    margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
     text-align: center;
-    color: #ff6b35;
     font-size: 1.2rem;
-    margin-bottom: 50px;
-    font-weight: 300;
+    color: var(--secondary-text-color);
+    margin-bottom: 3rem;
 }
 
+/* --- Cards dos Hashiras --- */
 .hashira-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
+    background-color: var(--surface-color);
+    border-radius: 10px;
     overflow: hidden;
-    transition: all 0.4s ease;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
-    cursor: pointer;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 5px solid;
 }
 
 .hashira-card:hover {
     transform: translateY(-10px);
-    border-color: var(--card-color);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--card-color);
-}
-
-.hashira-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent 50%, var(--card-color));
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 1;
-}
-
-.hashira-card:hover::before {
-    opacity: 0.2;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
 }
 
 .hashira-image {
     width: 100%;
     height: 300px;
     object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.hashira-card:hover .hashira-image {
-    transform: scale(1.1);
 }
 
 .hashira-info {
-    padding: 20px;
-    position: relative;
-    z-index: 2;
+    padding: 1.5rem;
+    flex-grow: 1;
 }
 
 .hashira-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 5px;
+    font-family: var(--font-special);
+    font-size: 1.7rem;
+    margin: 0 0 0.5rem 0;
 }
 
 .hashira-breathing {
-    color: var(--card-color);
     font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .hashira-description {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+    line-height: 1.6;
 }
 
-/* Cores temáticas para cada Hashira */
-.water {
-    --card-color: #4a90e2;
+/* Cores dos Cards */
+.hashira-card.water { border-color: #3498db; }
+.hashira-card.insect { border-color: #9b59b6; }
+.hashira-card.flame { border-color: #e74c3c; }
+.hashira-card.sound { border-color: #f1c40f; }
+.hashira-card.love { border-color: #e84393; }
+.hashira-card.stone { border-color: #95a5a6; }
+.hashira-card.serpent { border-color: #2ecc71; }
+.hashira-card.wind { border-color: #1abc9c; }
+.hashira-card.mist { border-color: #bdc3c7; }
+
+.water .hashira-name { color: #3498db; }
+.insect .hashira-name { color: #9b59b6; }
+.flame .hashira-name { color: #e74c3c; }
+.sound .hashira-name { color: #f1c40f; }
+.love .hashira-name { color: #e84393; }
+.stone .hashira-name { color: #95a5a6; }
+.serpent .hashira-name { color: #2ecc71; }
+.wind .hashira-name { color: #1abc9c; }
+.mist .hashira-name { color: #bdc3c7; }
+
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none; /* Oculta o menu normal */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--surface-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é adicionada via JS */
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        background-color: #2a2a2a;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão de menu */
+    }
+
+    .hashiras-section h1 {
+        font-size: 2.5rem;
+    }
 }
 
-.insect {
-    --card-color: #b565d8;
-}
+@media (max-width: 576px) {
+    .navbartheme {
+        padding: 1rem;
+    }
 
-.flame {
-    --card-color: #ff6b35;
-}
+    #corpoSite {
+        padding: 2rem 1rem;
+    }
 
-.sound {
-    --card-color: #f4a261;
-}
-
-.love {
-    --card-color: #ff69b4;
-}
-
-.stone {
-    --card-color: #8b7355;
-}
-
-.serpent {
-    --card-color: #9b59b6;
-}
-
-.wind {
-    --card-color: #2ecc71;
-}
-
-.mist {
-    --card-color: #95a5a6;
-}
-
-@media (max-width: 768px) {
-    .section-title {
+    .hashiras-section h1 {
         font-size: 2rem;
     }
-
-    .hashira-image {
-        height: 250px;
-    }
-}
-
-/* Fix para o grid do Bootstrap funcionar */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -12px;
-    margin-left: -12px;
-}
-
-.col-12,
-.col-md-6,
-.col-lg-4 {
-    padding-right: 12px;
-    padding-left: 12px;
 }
